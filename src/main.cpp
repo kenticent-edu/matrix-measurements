@@ -21,8 +21,8 @@ int main()
         {3, 3, 5, 7},
     };
     cout << m2.sumByRows() << m2.sumByColumns() << m * m1;
-    auto m3 = Matrix<int>::random(1000, 1000);
-    auto m4 = Matrix<int>::random(1000, 1000);
+    auto m3 = Matrix<int>::random(100, 100);
+    auto m4 = Matrix<int>::random(100, 100);
     // Don't print the results, just measure the times
     auto m5 = m3 * m4;
     auto m6 = m3 + m4;
