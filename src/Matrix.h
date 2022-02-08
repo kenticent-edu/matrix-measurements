@@ -77,6 +77,8 @@ public:
 
     Matrix& operator=(Matrix&& rhs) noexcept
     {
+        if (this == &rhs) return *this;
+
         delete[] _matrix;
         _matrix = rhs._matrix;
         _rowsAmount = rhs._rowsAmount;
