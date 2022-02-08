@@ -4,6 +4,7 @@
 
 #include "MeasureExecution.h"
 
+#include <algorithm>
 #include <cstddef>
 #include <initializer_list>
 #include <iostream>
@@ -192,8 +193,9 @@ public:
 private:
     void copyElementsFrom(const Matrix& rhs)
     {
-        for (size_t i = 0; i < _rowsAmount*_columnsAmount; ++i)
-            _matrix[i] = rhs._matrix[i];
+        auto elementsAmount = _rowsAmount * _columnsAmount;
+        auto end = rhs._matrix + elementsAmount;
+        std::copy(rhs._matrix, end, _matrix);
     }
 
     size_t _rowsAmount{}, _columnsAmount{};
